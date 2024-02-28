@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>ATTENDANCE</title>
+    <style>
+
+    .button {
+        text-align:center;
+            }
+
+    .l_lamp {
+        color:black;
+        font-size: x-large;
+        padding: 15px 32px;
+        text-align:center;
+
+            }
+
+    .title {
+        color:red;
+        text-align:center;
+    }
+
+    .mybutton {
+          background-color: black;
+          border: 1px ;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          border-radius: 12px;
+          border: 2px solid ##555555;
+            }
+
+      .mybutton:hover
+      {
+           background-color: green;
+           color: white;
+      }
+      .mybutton{width :20%}
+
+    </style>
+</head>
+<body>
+    <div class="title" id="1">
+        <h1 class="title"> MAHATMA GANDHI NATIONAL RURAL EMPLOYMENT GUARANTEE ACT 2005</h1>
+            <hr />
+            <br />
+    </div>
+  <h1>Camera Test</h1>
+
+  <br>
+  <video id="player" controls autoplay></video>
+<button id="capture">Capture</button>
+<canvas id="canvas" width="320" height="240"></canvas>
+<script>
+  const player = document.getElementById('player');
+  const canvas = document.getElementById('canvas');
+  const context = canvas.getContext('2d');
+  const captureButton = document.getElementById('capture');
+
+  const constraints = {
+    video: true,
+  };
+
+  captureButton.addEventListener('click', () => {
+    // Draw the video frame to the canvas.
+    z=context.drawImage(player, 0, 0, canvas.width, canvas.height);
+
+  });
+
+
+
+  // Attach the video stream to the video element and autoplay.
+  navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+    player.srcObject = stream;
+  });
+    function down() {
+    var wrapper = document.getElementById("capture"),
+clearButton = wrapper.querySelector("[data-action=clear]"),
+saveButton = wrapper.querySelector("[data-action=save]"),
+canvas = wrapper.querySelector("canvas"),
+signaturePad;
+
+saveButton.addEventListener("click", function (event) {
+if (signaturePad.isEmpty()) {
+    alert("Please provide signature first.");
+} else {
+    newfolder = myObject.CreateFolder ("C:\\xampp\\htdocs\\signature\\resources\\sigs");
+    alert();
+    saveButton.href = signaturePad.toDataURL();
+    saveButton.download = 'image.png';
+}
+});
+}
+<!--  function download(z, filename, type) {-->
+<!--        var file = new Blob([data], {type: type});-->
+<!--        if (window.navigator.msSaveOrOpenBlob) { // IE10+-->
+<!--            window.navigator.msSaveOrOpenBlob(file, filename);-->
+<!--        } else { // Others-->
+<!--            var a = document.createElement('a');-->
+<!--            var url = URL.createObjectURL(file);-->
+<!--            a.href = url;-->
+<!--            a.download = filename;-->
+<!--            document.body.appendChild(a);-->
+<!--            a.click();-->
+<!--            setTimeout(function() {-->
+<!--                document.body.removeChild(a);-->
+<!--                window.URL.revokeObjectURL(url);-->
+<!--            }, 0);-->
+<!--        }-->
+<!--    }-->
+</script>
+    <form action="/cam">
+
+        <label class="l_lamp">
+            <b>MGNREGA</b>
+        </label>
+
+            <input type="submit" name="img" value=submit class="mybutton">
+<!--            <input type="file" accept="image/*" Input_image />-->
+<!--            <input type="file" accept="image/*" capture="user" />-->
+<!--            <input type="file" accept="image/*" capture="environment" />-->
+
+        </form>
+
+</body>
+</html>

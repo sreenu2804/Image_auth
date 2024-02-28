@@ -1,0 +1,549 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Webcam</title>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body onload="configure();">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div id = "my_camera">&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div id="results" style="visibility: hidden; position: absolute;">&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src = "assets/webcam.min.js">&ndash;&gt;-->
+
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript">&ndash;&gt;-->
+<!--&lt;!&ndash;    function configure(){&ndash;&gt;-->
+<!--&lt;!&ndash;    Webcam.set({&ndash;&gt;-->
+<!--&lt;!&ndash;    width:480,&ndash;&gt;-->
+<!--&lt;!&ndash;    height:360,&ndash;&gt;-->
+<!--&lt;!&ndash;    image_format: 'jpeg',&ndash;&gt;-->
+<!--&lt;!&ndash;    jpeg_quality : 90&ndash;&gt;-->
+<!--&lt;!&ndash;    });&ndash;&gt;-->
+
+<!--&lt;!&ndash;    Webcam.attach('#my_camera');&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <title>Bootstrap Example</title>-->
+<!--  <meta charset="utf-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+<!--<style>-->
+<!--#container {-->
+<!--   /* margin-top: 50px ;-->
+<!--   /* margin: 0px auto;*/-->
+<!--    width: 500px;-->
+<!--    height: 375px;-->
+<!--   /* border: 10px #333 solid; */-->
+<!--    background-image: url(snapshots/download.jpg);-->
+
+<!--}-->
+<!--#videoElement {-->
+<!--    width: 500px;-->
+<!--    height: 375px;-->
+
+<!--}-->
+<!--.no-padding-->
+<!--{-->
+<!--  padding-left: 0;-->
+<!--  padding-right: 0;-->
+
+<!--}-->
+
+<!--#f_style-->
+<!--{-->
+<!--    width: 100%;-->
+<!--    height: 70%;-->
+<!--    margin-right: 10px;-->
+
+<!--}-->
+
+
+
+
+<!--</style>-->
+
+<!--</head>-->
+<!--<body>-->
+
+<!--<canvas id="CANVAS" name="CANVAS" width="400" height="350">Your browser does not support Canvas.</canvas>-->
+
+
+<!--    <div id="container"  name='cont' class="container-fluid no-padding ">-->
+<!--       <video autoplay="true" id="videoElement" name='vid'>-->
+
+<!--       </video>-->
+<!--    </div>-->
+
+<!-- <a id="download" download="face.jpg"></form>-->
+<!--<button onclick="myFunction(); download();" align="center" style="margin: 20px 250px auto " class="btn btn-primary dropdown-toggle" type="button" >capture</button></a>-->
+
+<!--<script>-->
+
+<!--  function download(){-->
+<!--    var download = document.getElementById("download");-->
+<!--    var image = document.getElementById("CANVAS").toDataURL("image/png")-->
+<!--                    .replace("image/jpg", "image/octet-stream");-->
+<!--        download.setAttribute("href", image);-->
+<!--        //download.setAttribute("download","archive.png");-->
+<!--  }-->
+
+
+
+
+
+<!--  var video = document.querySelector("#videoElement");-->
+
+<!--if (navigator.mediaDevices.getUserMedia)-->
+<!--{-->
+<!--    navigator.mediaDevices.getUserMedia({video: true})-->
+<!--  .then(function(stream) {-->
+<!--    video.srcObject = stream;-->
+<!--  })-->
+<!--  .catch(function(err0r) {-->
+<!--    console.log("Something went wrong!");-->
+<!--  });-->
+<!--var i=0;-->
+<!--function myFunction() {-->
+<!--  var x =  document.getElementById("CANVAS") ;-->
+<!--  var ctx = x.getContext("2d");-->
+<!--  ctx.fillStyle = "#FF0000";-->
+
+<!--  ctx.drawImage(video, 0, 0, 400, 350);-->
+
+<!--  //ctx.fillRect(20, 20, 150, 100);-->
+
+<!--  if (i <10)-->
+<!--  {-->
+<!--  document.body.appendChild(x);-->
+<!--  i=i+1;-->
+<!--};-->
+
+
+<!--}-->
+
+<!--}-->
+<!--</script>-->
+
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Webcam</title>-->
+<!--</head>-->
+<!--<body onload="configure();">-->
+<!--<div class="container">-->
+<!--    <div id = "my_camera">-->
+
+<!--    </div>-->
+<!--    <div id="results" style="visibility: hidden; position: absolute;">-->
+<!--</div>-->
+<!--</div>-->
+<!--<script type="text/javascript" src = "assets/webcam.min.js">-->
+
+<!--</script>-->
+<!--<script type="text/javascript">-->
+<!--    function configure(){-->
+<!--    Webcam.set({-->
+<!--    width:480,-->
+<!--    height:360,-->
+<!--    image_format: 'jpeg',-->
+<!--    jpeg_quality : 90-->
+<!--    });-->
+
+<!--    Webcam.attach('#my_camera');-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <title>Bootstrap Example</title>-->
+<!--  <meta charset="utf-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+<!--<style>-->
+<!--#container {-->
+<!--   /* margin-top: 50px ;-->
+<!--   /* margin: 0px auto;*/-->
+<!--    width: 500px;-->
+<!--    height: 375px;-->
+<!--   /* border: 10px #333 solid; */-->
+<!--    background-image: url(snapshots/download.jpg);-->
+
+<!--}-->
+<!--#videoElement {-->
+<!--    width: 500px;-->
+<!--    height: 375px;-->
+
+<!--}-->
+<!--.no-padding-->
+<!--{-->
+<!--  padding-left: 0;-->
+<!--  padding-right: 0;-->
+
+<!--}-->
+
+<!--#f_style-->
+<!--{-->
+<!--    width: 100%;-->
+<!--    height: 70%;-->
+<!--    margin-right: 10px;-->
+
+<!--}-->
+
+
+
+
+<!--</style>-->
+
+<!--</head>-->
+<!--<body>-->
+
+<!--<div class="title" id="1">-->
+<!--        <h1 class="title"> MAHATMA GANDHI NATIONAL RURAL EMPLOYMENT GUARANTEE ACT 2005</h1>-->
+<!--            <hr />-->
+<!--            <br />-->
+<!--    </div>-->
+
+<!--    <div class="button" id="2">-->
+<!--        <form action="/">-->
+
+<!--        <label class="l_lamp">-->
+<!--            <b>USER CREDENTIALS</b>-->
+<!--        </label>-->
+<!--            <input type="submit" name="pro" value="submit" class="mybutton">-->
+<!--        </form>-->
+<!--    </div>-->
+
+
+<!--<canvas id="CANVAS" name="CANVAS" width="400" height="350">Your browser does not support Canvas.</canvas>-->
+
+
+<!--    <div id="container"  name='cont' class="container-fluid no-padding ">-->
+<!--       <video autoplay="true" id="videoElement" name='vid'>-->
+
+<!--       </video>-->
+<!--    </div>-->
+
+<!--<form id="download" download="face.jpg"></form>-->
+<!--<button onclick="myFunction(); download();" align="center" style="margin: 20px 250px auto " class="btn btn-primary dropdown-toggle" type="button" >capture</button></a>-->
+
+<!--<script>-->
+
+<!--  function download(){-->
+<!--    var download = document.getElementById("download");-->
+<!--    var image = document.getElementById("CANVAS").toDataURL("image/png")-->
+<!--                    .replace("image/jpg", "image/octet-stream");-->
+<!--        download.setAttribute("href", image);-->
+<!--        //download.setAttribute("download","archive.png");-->
+<!--  }-->
+
+
+
+
+
+<!--  var video = document.querySelector("#videoElement");-->
+
+<!--if (navigator.mediaDevices.getUserMedia)-->
+<!--{-->
+<!--    navigator.mediaDevices.getUserMedia({video: true})-->
+<!--  .then(function(stream) {-->
+<!--    video.srcObject = stream;-->
+<!--  })-->
+<!--  .catch(function(err0r) {-->
+<!--    console.log("Something went wrong!");-->
+<!--  });-->
+<!--var i=0;-->
+<!--function myFunction() {-->
+<!--  var x =  document.getElementById("CANVAS") ;-->
+<!--  var ctx = x.getContext("2d");-->
+<!--  ctx.fillStyle = "#FF0000";-->
+
+<!--  ctx.drawImage(video, 0, 0, 400, 350);-->
+
+<!--  //ctx.fillRect(20, 20, 150, 100);-->
+
+<!--  if (i <10)-->
+<!--  {-->
+<!--  document.body.appendChild(x);-->
+<!--  i=i+1;-->
+<!--};-->
+
+
+<!--}-->
+
+<!--}-->
+<!--</script>-->
+
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>IMG PROCESSING</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+#container {
+   /* margin-top: 50px ;
+   /* margin: 0px auto;*/
+    width: 500px;
+    height: 375px;
+   /* border: 10px #333 solid; */
+    background-image: url(snapshots/download.jpg);
+
+}
+#videoElement {
+    width: 500px;
+    height: 375px;
+
+}
+.no-padding
+{
+  padding-left: 0;
+  padding-right: 0;
+
+}
+
+#f_style
+{
+    width: 100%;
+    height: 70%;
+    margin-right: 10px;
+
+}
+
+
+
+
+</style>
+<style>
+
+    .button {
+        text-align:center;
+            }
+
+    .l_lamp {
+        color:black;
+        font-size: x-large;
+        padding: 15px 32px;
+        text-align:center;
+
+            }
+
+    .title {
+        color:red;
+        text-align:center;
+    }
+
+    .mybutton {
+          background-color: black;
+          border: 1px ;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          border-radius: 12px;
+          border: 2px solid ##555555;
+            }
+
+      .mybutton:hover
+      {
+           background-color: green;
+           color: white;
+      }
+      .mybutton{width :20%}
+
+    </style>
+</head>
+<body>
+<div class="title" id="1">
+        <h1 class="title"> MAHATMA GANDHI NATIONAL RURAL EMPLOYMENT GUARANTEE ACT 2005</h1>
+            <hr />
+            <br />
+    </div>
+
+    <div class="button" id="2">
+        <form action="/test1">
+
+        <label class="l_lamp">
+            <b>SAVE IMAGE</b>
+        </label>
+            aadhar: <input type="text" name="aadhar">
+            date: <input type="text" name="date">
+            <input type="submit" name="pro" value="submit" class="mybutton">
+            <input type="submit" name="pro" value="delete" class="mybutton">
+        </form>
+    </div>
+
+<canvas id="CANVAS" name="CANVAS" width="400" height="350">Your browser does not support Canvas.</canvas>
+
+
+    <div id="container"  name='cont' class="container-fluid no-padding ">
+       <video autoplay="true" id="videoElement" name='vid'>
+
+       </video>
+    </div>
+
+ <a id="download" download="face.jpg"></form>
+<button onclick="myFunction(); download();" align="center" style="margin: 20px 250px auto " class="btn btn-primary dropdown-toggle" type="button" >capture</button></a>
+
+<script>
+
+  function download(){
+    var download = document.getElementById("download");
+    var image = document.getElementById("CANVAS").toDataURL("image/png")
+                    .replace("image/jpg", "image/octet-stream");
+        download.setAttribute("href", image);
+        //download.setAttribute("download","archive.png");
+  }
+
+
+
+
+
+  var video = document.querySelector("#videoElement");
+
+if (navigator.mediaDevices.getUserMedia)
+{
+    navigator.mediaDevices.getUserMedia({video: true})
+  .then(function(stream) {
+    video.srcObject = stream;
+  })
+  .catch(function(err0r) {
+    console.log("Something went wrong!");
+  });
+var i=0;
+function myFunction() {
+  var x =  document.getElementById("CANVAS") ;
+  var ctx = x.getContext("2d");
+  ctx.fillStyle = "#FF0000";
+
+  ctx.drawImage(video, 0, 0, 400, 350);
+
+  //ctx.fillRect(20, 20, 150, 100);
+
+  if (i <10)
+  {
+  document.body.appendChild(x);
+  i=i+1;
+};
+
+
+}
+
+}
+</script>
+
+
+</body>
+</html>
